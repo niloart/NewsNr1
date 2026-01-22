@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urgência NR1 - Escol.Ai</title>
+    <style>
+        /* Reset básico e tipografia */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            /* Cinza bem suave e moderno */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1f2937;
+            /* Cinza chumbo para texto */
+            line-height: 1.6;
+        }
+
+        table {
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        /* Container Principal */
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            background-color: #f3f4f6;
+            padding-bottom: 40px;
+        }
+
+        .main-content {
+            background-color: #ffffff;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            /* Bordas mais arredondadas */
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Logo Area - DARK THEME */
+        .logo-container {
+            background-color: #0f172a;
+            /* Fundo Escuro (Navy Profundo) */
+            padding: 25px 20px;
+            text-align: center;
+            /* Removemos padding-bottom para colar com o header se desejado, 
+               mas manteremos separado visualmente se for o mesmo tom */
+            padding-bottom: 10px;
+        }
+
+        .logo-img {
+            max-width: 160px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Header de Urgência - ATUALIZADO */
+        .header {
+            background-color: #0f172a;
+            /* MESMO AZUL DO LOGO */
+            padding: 10px 20px 10px 20px;
+            /* Ajuste de padding superior */
+            text-align: center;
+            border-bottom: 4px solid #f59e0b;
+            /* Linha de destaque Amarela (Alerta) */
+        }
+
+        .header h1 {
+            color: #ffffff;
+            font-family: 'Arial Black', 'Helvetica Neue', Helvetica, sans-serif;
+            /* Fonte de Impacto */
+            font-size: 26px;
+            margin: 0 0 20px 0;
+            /* Margem inferior para separar da imagem */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        /* Estilo da Imagem de Capa */
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Seção de Conteúdo */
+        .content-block {
+            padding: 40px;
+        }
+
+        .section-title {
+            color: #111827;
+            /* Preto quase total */
+            font-size: 19px;
+            font-weight: 700;
+            border-left: 4px solid #4f46e5;
+            /* Roxo/Indigo Tech */
+            padding-left: 15px;
+            margin-bottom: 20px;
+            margin-top: 35px;
+        }
+
+        /* O que é NR1 */
+        .info-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            color: #4b5563;
+        }
+
+        /* Box de Riscos Psicossociais */
+        .psychosocial-box {
+            background-color: #fffbeb;
+            /* Amarelo bem suave */
+            border-left: 4px solid #f59e0b;
+            /* Amarelo Ouro */
+            padding: 20px;
+            margin-top: 25px;
+            font-size: 14px;
+            color: #78350f;
+            border-radius: 4px;
+            line-height: 1.5;
+        }
+
+        .source-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #92400e;
+            text-align: right;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Pontos Chave */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bullet-list li {
+            padding-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            color: #374151;
+        }
+
+        .bullet-list li:before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 14px;
+        }
+
+        .bullet-list strong {
+            color: #111827;
+        }
+
+        /* Lista de Serviços - Estilo Tech */
+        .service-list {
+            margin-top: 25px;
+        }
+
+        .service-item {
+            display: table;
+            width: 100%;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #f3f4f6;
+            padding-bottom: 20px;
+        }
+
+        .service-icon {
+            display: table-cell;
+            vertical-align: top;
+            width: 50px;
+            font-size: 24px;
+            padding-right: 15px;
+            color: #4f46e5;
+            /* Indigo */
+            padding-top: 5px;
+        }
+
+        .service-content {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .service-title {
+            color: #111827;
+            font-weight: 700;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .service-text {
+            font-size: 14px;
+            color: #6b7280;
+            /* Cinza médio */
+            line-height: 1.5;
+        }
+
+        /* CTA Button */
+        .cta-container {
+            text-align: center;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            background-color: #f8fafc;
+            padding: 30px 20px;
+            border-radius: 8px;
+        }
+
+        .cta-button {
+            background-color: #4f46e5;
+            /* Indigo Tech (Cor de ação moderna) */
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #4338ca;
+            box-shadow: 0 6px 8px -1px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Mobile Adjustments */
+        @media screen and (max-width: 600px) {
+            .content-block {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <center>
+            <table class="main-content">
+                <!-- LOGO DARK THEME -->
+                <tr>
+                    <td class="logo-container">
+                        <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6920b92cd9e815bef4988c9a/66a40636b_logotopo.png"
+                            alt="Escol.Ai Logo" class="logo-img">
+                    </td>
+                </tr>
+
+                <!-- HEADER (AZUL COM LINHA AMARELA) -->
+                <tr>
+                    <td class="header">
+                    </td>
+                </tr>
+
+                <!-- CORPO DO E-MAIL -->
+                <tr>
+                    <td class="content-block">
+
+                        <img src="Gemini_Generated_Image_l8boul8boul8boul.png"
+                            alt="Você tem até maio para se adequar a NR1"
+                            style="max-width: 100%; height: auto; display: block; margin: 0 auto 25px auto; border-radius: 8px;">
+
+                        <p>Olá,</p>
+                        <p>Muitas empresas ainda tratam a segurança do trabalho como burocracia, mas a <strong>Norma
+                                Regulamentadora nº 1 (NR1)</strong> mudou as regras do jogo. Com a introdução do GRO e
+                            PGR, a gestão de riscos deixou de ser estática e passou a ser contínua e integrada.</p>
+
+                        <!-- O QUE É NR1 -->
+                        <h2 class="section-title">O que é a Nova NR1?</h2>
+                        <div class="info-box">
+                            A NR1 estabelece as disposições gerais sobre saúde e segurança no trabalho. Ela substituiu o
+                            antigo PPRA pelo <strong>PGR (Programa de Gerenciamento de Riscos)</strong>, exigindo que as
+                            empresas identifiquem, avaliem e controlem os riscos de forma proativa, usando dados para
+                            tomada de decisão.
+                        </div>
+
+                        <!-- PRINCIPAIS DÚVIDAS -->
+                        <h2 class="section-title">Pontos de Atenção Imediata</h2>
+                        <ul class="bullet-list">
+                            <li><strong>Quem precisa fazer?</strong> Praticamente todas as empresas que possuem
+                                funcionários CLT.</li>
+                            <li><strong>Qual a diferença para o antigo PPRA?</strong> O PGR não expira. Ele deve ser
+                                revisitado constantemente e integrado ao inventário de riscos.</li>
+                            <li><strong>Quais as consequências?</strong> Multas pesadas e impossibilidade de emitir
+                                documentos essenciais para licitações e contratos.</li>
+                        </ul>
+
+                        <!-- TEXTO: RISCOS PSICOSSOCIAIS -->
+                        <div class="psychosocial-box">
+                            <strong>Atenção:</strong> A NR-1 passa a exigir que os fatores de risco psicossociais
+                            relacionados ao trabalho constem no inventário de riscos ocupacionais dentro do
+                            Gerenciamento de Riscos Ocupacionais (GRO), integrado ao PGR. Esses fatores entram “ao lado”
+                            dos riscos já usuais, ampliando o escopo do que precisa ser identificado e gerenciado.
+                            <span class="source-text">Fonte: gov.br</span>
+                        </div>
+
+                        <!-- LISTA DE SERVIÇOS ESCOL.AI -->
+                        <h2 class="section-title">Solução Escol.Ai para NR1</h2>
+
+                        <div class="service-list">
+                            <!-- Item 1 -->
+                            <div class="service-item">
+                                <div class="service-icon">🔍</div>
+                                <div class="service-content">
+                                    <span class="service-title">1. Diagnóstico Digital</span>
+                                    <span class="service-text">Análise completa da conformidade legal e identificação de
+                                        lacunas nos processos atuais de segurança e saúde do trabalho usando nossa
+                                        tecnologia.</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="service-item">
+                                <div class="service-icon">📝</div>
+                                <div class="service-content">
+                                    <span class="service-title">2. Elaboração do PGR</span>
+                                    <span class="service-text">Criação ou adequação do plano de gestão de riscos
+                                        estratégico, unificando o inventário de riscos e as medidas de prevenção em um
+                                        sistema inteligente.</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="service-item">
+                                <div class="service-icon">🛠️</div>
+                                <div class="service-content">
+                                    <span class="service-title">3. Plano de Ação & Treinamentos</span>
+                                    <span class="service-text">Implementação prática de soluções corretivas e
+                                        capacitação contínua da equipe, garantindo que todos dominem as novas
+                                        diretrizes.</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="service-item">
+                                <div class="service-icon" style="color: #059669;">✅</div> <!-- Verde para Sucesso -->
+                                <div class="service-content">
+                                    <span class="service-title">4. Empresa 100% Adequada</span>
+                                    <span class="service-text">Conformidade total com as novas normas alcançada,
+                                        garantindo segurança jurídica para o negócio e um ambiente protegido para os
+                                        colaboradores.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CALL TO ACTION -->
+                        <div class="cta-container">
+                            <p style="margin-bottom: 15px; font-size: 15px; color: #4b5563;">Não deixe para a última
+                                hora. Garanta sua conformidade agora.</p>
+                            <a href="#" class="cta-button">ADEQUAR MINHA EMPRESA</a>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+</body>
+
+</html>
